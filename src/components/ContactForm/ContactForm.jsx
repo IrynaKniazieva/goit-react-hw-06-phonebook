@@ -1,11 +1,28 @@
 import { useState } from 'react';
 
+// import initialState from './initialState';
 import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 
 export default function ContactForm({ onAddContact }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  // const [state, setState] = useState({...initialState})
+
+  // const handleChange = ({target}) => {
+  //   const {name, value} = target;
+  //   setState(prevState => {
+  //     return {...prevState, [name]: value}
+  //   })
+  // }
+
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   onAddContact({...state});
+  //   setState({...initialState});
+  // }
+
+  // const {name, number} = state;
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
