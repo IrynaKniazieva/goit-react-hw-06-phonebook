@@ -1,67 +1,76 @@
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
+// import { nanoid } from "nanoid";
 
 
 import ContactForm from "components/ContactForm/ContactForm";
-import ContactItem from "components/ContactItem/ContactItem";
+
 import ContactList from "components/ContactList/ContactList";
 import Filter from 'components/Filter/Filter';
 
-import { getContacts } from "redux/contacts/contacts-selectors";
-import { getFilter } from "redux/filter/filter-selectors";
+// import { getContacts } from "redux/contacts/contacts-selectors";
+// import { getFilter } from "redux/filter/filter-selectors";
 
-import { addContact, deleteContact } from "redux/contacts/contacts-slice";
-import { setFilter } from "redux/filter/filter-slice";
+// import { addContact, deleteContact } from "redux/contacts/contacts-slice";
+// import { setFilter } from "redux/filter/filter-slice";
 
 const ContactsBook = () => {
-    const contacts = useSelector(getContacts);
-    const filter = useSelector(getFilter);
+    // const contacts = useSelector(getContacts);
+    // const filter = useSelector(getFilter);
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-      // Добавление нового контакта
-      const handleAddContact = (name, number) => {
-        // const newContact = { id: nanoid(), name, number };
-        if (
-          contacts.find(
-            contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
-          )
-        ) {
-          alert(`${contact.name} is already in contacts`);
-          return;
-        }
-        setContacts(contacts => [newContact, ...contacts]);
-      };
+  //     //   // Добавление нового контакта
+  // const handleAddContact = (name, number) => {
+  //   const newContact = { id: nanoid(), name, number };
+  //   if (
+  //     contacts.find(
+  //       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+  //     )
+  //   ) {
+  //     alert(`${newContact.name} is already in contacts`);
+  //     return;
+  //   }
+  //   dispatch(addContact(contacts => [newContact, ...contacts]));
+  // };
     
-      //   // фильтр
-      const changeFilter = evt => {
-        setFilter(evt.currentTarget.value);
-      };
+      // //   // фильтр
+      // const changeFilter = evt => {
+      //   dispatch(setFilter(evt.currentTarget.value));
+      // };
     
-      //   // Удаление контакта
-      const deleteContact = id => {
-        setContacts(prevState => prevState.filter(contact => contact.id !== id));
-      };
+      // //   // Удаление контакта
+      // // const deleteContact = id => {
+      // //   setContacts(prevState => prevState.filter(contact => contact.id !== id));
+      // // };
+      // const handleDeleteContact = (id) => {
+      //   dispatch(deleteContact(id))
+      // }
     
-      //   // Только видимые
-      const getVisibleContacts = () => {
-        const normalizedFilter = filter.toLowerCase();
+      // //   // Только видимые
+      // const getVisibleContacts = () => {
+      //   const normalizedFilter = filter.toLowerCase();
     
-        return contacts.filter(contact =>
-          contact.name.toLowerCase().includes(normalizedFilter)
-        );
-      };
+      //   return contacts.filter(contact =>
+      //     contact.name.toLowerCase().includes(normalizedFilter)
+      //   );
+      // };
           
 
     return (
         <div>
             <h1>Phonebook</h1>
+            <ContactForm />
+            <h2>Contacts</h2>
+            <Filter />
+            <ContactList/>
+            {/* <h1>Phonebook</h1>
             <ContactForm onAddContact={handleAddContact}/>
             <h2>Contacts</h2>
             <Filter filter={filter} onChange={changeFilter} />
             <ContactList>
                 <ContactItem contacts={getVisibleContacts()}
-          onDeleteContact={deleteContact}/>
-            </ContactList>
+          onDeleteContact={handleDeleteContact}/>
+            </ContactList> */}
         </div>
     )
 }
