@@ -4,7 +4,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import ContactsBook from 'components/ContactsBook/ContactsBook';
 
-import {store, persistor} from 'redux/store'
+import { store, persistor } from 'redux/store';
 
 const App = () => {
   return (
